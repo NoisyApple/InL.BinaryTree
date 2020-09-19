@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: cornflowerblue;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#Container {
+  display: flex;
+  flex-direction: column;
+}
+
+#Canvas {
+  canvas {
+    border-radius: 10px;
+    border: 5px solid #fff8;
+  }
+}
+
+#Controls {
+  display: flex;
+
+  #ButtonClear {
+    margin-left: auto;
+    margin-right: 0;
+    margin-left: 5px;
+    flex: 1;
+  }
+
+  label,
+  input,
+  button {
+    margin-right: 5px;
+  }
+}
