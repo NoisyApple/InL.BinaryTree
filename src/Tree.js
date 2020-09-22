@@ -37,10 +37,32 @@ export default class Tree {
           // An individual node is drawn.
           levelNodes.forEach((node) => {
             p5.fill(node.depth * 10, 100, 80, 50);
-            p5.rect(node.xStart, node.depth * 50, node.width * 50, 50);
+            // p5.rect(node.xStart, node.depth * 50, node.width * 50, 50);
+
+            p5.stroke(node.depth * 10, 100, 80, 50);
+            if (node.parentNode != null) {
+              p5.line(
+                (node.width * 50) / 2 + node.xStart,
+                node.depth * 50 + 50 / 2,
+                (node.parentNode.width * 50) / 2 + node.parentNode.xStart,
+                node.parentNode.depth * 50 + 50 / 2
+              );
+            }
+
+            p5.ellipse(
+              (node.width * 50) / 2 + node.xStart,
+              node.depth * 50 + 50 / 2,
+              35
+            );
 
             p5.fill(255);
-            p5.text(node.value, node.xStart, (node.depth + 1) * 50);
+            p5.textAlign(p5.CENTER, p5.CENTER);
+
+            p5.text(
+              node.value,
+              (node.width * 50) / 2 + node.xStart,
+              node.depth * 50 + 50 / 2 + 1
+            );
           });
         }
       }
@@ -51,5 +73,22 @@ export default class Tree {
   // Update method.
   update() {
     if (this.root != null) this.root.update();
+  }
+
+  // Calculates maximum width.
+  maxWidth() {
+    let max = 0;
+
+    for (const level in this.depthMap) {
+      let newMax = 0;
+      if (this.depthMap.hasOwnProperty(level)) {
+        const levelNodes = this.depthMap[level];
+
+        levelNodes.forEach((node) => (newMax += node.width * 50));
+      }
+      max = newMax > max ? newMax : max;
+    }
+
+    return max;
   }
 }

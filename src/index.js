@@ -42,14 +42,14 @@ window.onload = () => {
   const sketch = (p5) => {
     // Setup function.
     p5.setup = () => {
-      let canvas = p5.createCanvas(500, 500);
+      let canvas = p5.createCanvas(800, 500);
       canvas.parent("Canvas");
     };
 
     // Draw loop.
     p5.draw = () => {
       p5.background(0);
-      // p5.translate(p5.width / 2, 50);
+      p5.translate(p5.width / 2 - tree.maxWidth() / 2, 20);
       tree.update();
       tree.draw(p5);
     };

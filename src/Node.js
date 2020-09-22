@@ -86,43 +86,4 @@ export default class Node {
       }
     }
   }
-
-  // draw(p5) {
-  //   if (this.leftNode != null) this.leftNode.draw(p5);
-
-  //   p5.push();
-  //   p5.colorMode(p5.HSB, 100);
-
-  //   p5.fill(this.depth * 10, 100, 80, 50);
-  //   p5.rectMode(p5.CENTER);
-  //   p5.rect(this.x * 50, this.y * 50, this.width * 50, 50);
-  //   p5.pop();
-
-  //   p5.noFill();
-  //   p5.stroke("#fff");
-
-  //   if (this.leftNode != null)
-  //     p5.line(
-  //       this.x * 50 - 20,
-  //       this.y * 50 + 20,
-  //       this.x * 50 - 30,
-  //       this.y * 50 + 30
-  //     );
-  //   if (this.rightNode != null)
-  //     p5.line(
-  //       this.x * 50 + 20,
-  //       this.y * 50 + 20,
-  //       this.x * 50 + 30,
-  //       this.y * 50 + 30
-  //     );
-
-  //   p5.strokeWeight(2);
-  //   p5.ellipse(this.x * 50, this.y * 50, 30);
-  //   p5.noStroke();
-  //   p5.fill("#fff");
-  //   p5.textAlign(p5.CENTER, p5.CENTER);
-  //   p5.text(this.value, this.x * 50, this.y * 50 + 2);
-
-  //   if (this.rightNode != null) this.rightNode.draw(p5);
-  // }
 }
